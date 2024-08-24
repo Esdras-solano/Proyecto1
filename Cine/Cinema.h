@@ -16,7 +16,7 @@ private:
 
 public:
 	Cinema();
-	Cinema(Movies* _Movies, Rooms* _Rooms, Schedule* _Schedule);
+	Cinema(Movies* _movies, Rooms* _rooms, Schedule* _schedule);
 	~Cinema();
 
 	void insertMovies(int quantity);

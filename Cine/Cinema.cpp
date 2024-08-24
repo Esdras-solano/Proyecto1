@@ -4,11 +4,11 @@ Cinema::Cinema()
 {
 }
 
-Cinema::Cinema(Movies* _Movies, Rooms* _Rooms, Schedule* _Schedule)
+Cinema::Cinema(Movies* _movies, Rooms* _rooms, Schedule* _schedule)
 {
-	this->movie = _Movies;
-	this->room = _Rooms;
-	this->schedule = _Schedule;
+	this->movie = _movies;
+	this->room = _rooms;
+	this->schedule = _schedule;
 }
 
 Cinema::~Cinema()
@@ -26,16 +26,18 @@ void Cinema::insertMovies(int quantity)
 
 		std::cout << "Ingrese el nombre para la pelicula numero " << i << ": ";
 		std::cin >> nombre;
-		std::cout << "\ningrese el año en que salio la pelicula numero " << i << ": ";
+		std::cout << "\ningrese el anio en que salio la pelicula numero " << i << ": ";
 		std::cin >> anio;
-		std::cout << "\nIngrese el país de origen de la pelicula numero " << i << ": ";
+		std::cout << "\nIngrese el pais de origen de la pelicula numero " << i << ": ";
 		std::cin >> pais;
 		std::cout << "\nIngrese la duracion en minutos de la pelicula numero " << i << ": ";
 		std::cin >> duracion;
-		std::cout << "\nIngrese el revio del 0 al 10 para la pelicula numero " << i << ": ";
+		std::cout << "\nIngrese el review del 0 al 10 para la pelicula numero " << i << ": ";
 		std::cin >> resenia;
 
 		movie[i] = Movies(nombre, anio, pais, duracion, resenia);
+
+		system("cls");
 	}
 }
 
@@ -50,6 +52,8 @@ void Cinema::insertRooms(int quantity)
 		std::cout << "\nIngrese el precio de la sala " << i << ": ";
 		std::cin >> price;
 		room[i] = Rooms(number, seats, price);
+
+		system("cls");
 	}
 }
 
@@ -66,6 +70,8 @@ void Cinema::insertSchedule(int quantity)
 		std::cout << "\nIngrese la hora de finalizacion de la pelicula " << movie[i].getMovieName() << ": ";
 		std::cin >> endTime;
 		schedule[i] = Schedule(dates, startime, endTime);
+
+		system("cls");
 	}
 }
 

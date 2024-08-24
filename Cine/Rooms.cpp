@@ -4,11 +4,11 @@ Rooms::Rooms(): roomNumber(0), numberSeats(0), price(0)
 {
 }
 
-Rooms::Rooms(int mRoomNumber, int mNumberSeats, int mPrice)
+Rooms::Rooms(int _roomNumber, int _numberSeats, int _price)
 {
-	this->roomNumber = mRoomNumber;
-	this->numberSeats = mNumberSeats;
-	this->price = mPrice;
+	this->roomNumber = _roomNumber;
+	this->numberSeats = _numberSeats;
+	this->price = _price;
 }
 
 void Rooms::setRoomNumber(int mRoomNumber)

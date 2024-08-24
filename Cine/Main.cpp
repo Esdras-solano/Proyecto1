@@ -6,14 +6,20 @@ void archivo(int optSubMenu) {
     do{
         std::cout << "\n1. Acerca de" << std::endl;
         std::cout << "2. Salir" << std::endl;
+        std::cout << "3. Volver al menu principal" << std::endl;
         std::cout << "Seleccione una opcion: ";
         std::cin >> optSubMenu;
 
-        if (optSubMenu == 1) {
-            std::cout << "\nHola" << std::endl;
-        }
-        else {
+        switch (optSubMenu)
+        {
+        case 1:
+            std::cout << "Esdras";
+            break;
+        case 2:
             exit(0);
+            break;
+        default:
+            break;
         }
     } while (optSubMenu != 3);
 }
@@ -23,15 +29,18 @@ void Mantenimiento(int optSubMenu, int quantityMovies) {
         std::cout << "1. Peliculas" << std::endl;
         std::cout << "2. Salas" << std::endl;
         std::cout << "3. Horarios" << std::endl;
-        std::cout << "4. Volver al menú principal" << std::endl;
+        std::cout << "4. Volver al menu principal" << std::endl;
         std::cout << "Seleccione una opcion: ";
         std::cin >> optSubMenu;
+
+        std::cout << std::endl;
 
         switch (optSubMenu)
         {
         case 1:
             std::cout << "Cuantas peliculas desea agregar?: ";
             std::cin >> quantityMovies;
+            std::cout << std::endl;
             NuevaCinema.insertMovies(quantityMovies);
             break;
         case 2:
@@ -60,6 +69,9 @@ void menu(int optMenu, int optSubMenu, int quantityMovies) {
         std::cout << "4. Ventas" << std::endl;
         std::cout << "Seleccione una opcion: ";
         std::cin >> optMenu;
+        std::cout << std::endl; 
+
+        system("cls");
 
         switch (optMenu)
         {

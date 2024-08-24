@@ -9,7 +9,7 @@ private:
 
 public:
 	Rooms();
-	Rooms(int mRoomNumber, int mNumberSeats, int mPrice);
+	Rooms(int _roomNumber, int _numberSeats, int _price);
 	void setRoomNumber(int mRoomNumber);
 	void setNumberOfSeat(int mNumberSeats);
 	void setPrice(int mPrice);

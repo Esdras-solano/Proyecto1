@@ -4,11 +4,11 @@ Schedule::Schedule()
 {
 }
 
-Schedule::Schedule(std::string mDate, std::string mStartTime, std::string mEndTime)
+Schedule::Schedule(std::string _date, std::string _startTime, std::string _endTime)
 {
-	this->date = mDate;
-	this->startTime = mStartTime;
-	this->endTime = mEndTime;
+	this->date = _date;
+	this->startTime = _startTime;
+	this->endTime = _endTime;
 }
 
 void Schedule::setDate(std::string mDate)

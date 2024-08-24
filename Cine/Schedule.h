@@ -8,7 +8,7 @@ private:
 	std::string endTime;
 public:
 	Schedule();
-	Schedule(std::string mDate, std::string mStartTime, std::string mEndTime);
+	Schedule(std::string _date, std::string _startTime, std::string _endTime);
 
 	void setDate(std::string mDate);
 	void setstartTime(std::string mStartTime);

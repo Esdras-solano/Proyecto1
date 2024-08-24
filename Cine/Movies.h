@@ -12,7 +12,7 @@ private:
 
 public:
 	Movies();
-	Movies(std::string mName, int mYear, std::string mCoutry, int mDuration, std::string mReview);
+	Movies(std::string _name, int _year, std::string _coutry, int _duration, std::string _review);
 	
 	void setMovieName(std::string mName);
 	void setYearOfMovie(int mYear);
