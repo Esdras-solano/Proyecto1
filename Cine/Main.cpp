@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include "Cinema.h"
-Cinema NuevaCinema;
+
 void archivo(int optSubMenu) {
     do{
         std::cout << "\n1. Acerca de" << std::endl;
@@ -23,8 +23,7 @@ void archivo(int optSubMenu) {
         }
     } while (optSubMenu != 3);
 }
-void Mantenimiento(int optSubMenu, int quantityMovies) {
-    
+void mantenimiento(Cinema &NuevaCinema, int optSubMenu, int &quantityMovies, int quantityRoom, int quantitySchedule) {
     do {
         std::cout << "1. Peliculas" << std::endl;
         std::cout << "2. Salas" << std::endl;
@@ -34,7 +33,6 @@ void Mantenimiento(int optSubMenu, int quantityMovies) {
         std::cin >> optSubMenu;
 
         std::cout << std::endl;
-
         switch (optSubMenu)
         {
         case 1:
@@ -44,23 +42,24 @@ void Mantenimiento(int optSubMenu, int quantityMovies) {
             NuevaCinema.insertMovies(quantityMovies);
             break;
         case 2:
-            NuevaCinema.insertRooms(quantityMovies);
+            std::cout << "Cuantas salas desea agregar?: ";
+            std::cin >> quantityRoom;
+            NuevaCinema.insertRooms(quantityRoom);
+            std::cout << std::endl;
             break;
         case 3:
-            NuevaCinema.insertSchedule(quantityMovies);
+            std::cout << "Cuantos horarios desea agregar?: ";
+            std::cin >> quantitySchedule;
+            NuevaCinema.insertSchedule(quantitySchedule);
             break;
         default:
             break;
         }
     } while (optSubMenu != 4);
 }
-void reserva() {
-
-}
-void venta() {
-
-}
-void menu(int optMenu, int optSubMenu, int quantityMovies) {
+void menu() {
+    Cinema NuevaCinema;
+    int optMenu = 0, optSubMenu = 0, quantityMovies = 0, selectionMovie = 0, quantityRoom = 0, quantitySchedule = 0, quantityTicket = 0;
     do {
         std::cout << "Bienvenido a Nueva Cinema" << std::endl;
         std::cout << "1. Archivo" << std::endl;
@@ -80,11 +79,12 @@ void menu(int optMenu, int optSubMenu, int quantityMovies) {
             break;
 
         case 2:
-            Mantenimiento(optSubMenu, quantityMovies);
+            mantenimiento(NuevaCinema, optMenu, quantityMovies, quantityRoom, quantitySchedule);
             break;
 
         case 3:
-            
+            NuevaCinema.reservation(selectionMovie, quantityMovies, quantityTicket);
+            std::cout << "\n";
             break;
 
         case 4:
@@ -94,18 +94,17 @@ void menu(int optMenu, int optSubMenu, int quantityMovies) {
             break;
         }
     } while (optMenu != 5);
-    NuevaCinema.~Cinema();
+  
 }
 
 int main()
 {
-    int optMenu = 0, optSubMenu = 0, quantityMovies = 0;
-    Cinema NuevaCinema;
+   
+    
 
-
-   menu(optMenu, optSubMenu, quantityMovies);
+    menu();
    std::cout << std::endl;
-   NuevaCinema.showMovies();
 
+   
     return 0;
 }

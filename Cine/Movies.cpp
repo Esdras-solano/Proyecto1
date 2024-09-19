@@ -4,13 +4,13 @@ Movies::Movies(): year(0), duration(0)
 {
 }
 
-Movies::Movies(std::string _name, int _year, std::string _coutry, int _duration, std::string _review)
+Movies::Movies(std::string name, int year, std::string coutry, int duration, std::string review)
 {
-	this->name = _name;
-	this->country = _coutry;
-	this->review = _review;
-	this->year = _year;
-	this->duration = _duration;
+	this->name = name;
+	this->country = coutry;
+	this->review = review;
+	this->year = year;
+	this->duration = duration;
 }
 
 void Movies::setMovieName(std::string mName)

@@ -4,18 +4,26 @@ class Rooms
 {
 private:
 	int roomNumber;
-	int numberSeats;
 	int price;
-
+	int rows;         
+	int cols;
+	int** seatMatrix;
 public:
 	Rooms();
-	Rooms(int _roomNumber, int _numberSeats, int _price);
-	void setRoomNumber(int mRoomNumber);
-	void setNumberOfSeat(int mNumberSeats);
-	void setPrice(int mPrice);
+	void createRooms(int _roomNumber, int _price, int _rows, int _cols);
+	~Rooms();
+	void setRoomNumber(int _RoomNumber);
+	void setPrice(int _Price);
+
 
 	int getRoomNumber();
-	int getNumberSeats();
+	int getNumberOfSeats();
 	int getPrice();
+	int getRows();
+	int getCols();
+
+	void showMatrixSeats();
+	void reserveSeatMatrix(int &positionRows, int &positioCols);
+	
 };
 
